@@ -20,6 +20,8 @@ from math import isnan
 
 pymysql.install_as_MySQLdb()
 
+# migrations updated 07/19 6 pm.  All models are now managed by Django.
+
 class Amendment(models.Model):
     amendment_id = models.AutoField(primary_key=True)
     product_name = models.CharField(max_length=50, blank=True, null=True)
