@@ -9,7 +9,8 @@ import pymysql
 from django import forms
 from django.conf import settings
 from django.contrib.auth.hashers import make_password, check_password
-from django.contrib.auth.models import Permission, User
+from django.contrib.auth.models import Permission
+from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.db import transaction
 from django.db import models
@@ -118,7 +119,7 @@ class Farm(models.Model):
     zip = models.CharField(max_length=5, blank=True, null=True)
     state = models.CharField(max_length=2, blank=True, null=True)
     description = models.CharField(max_length=255, blank=True, null=True)
-    user = models.ForeignKey('User', models.DO_NOTHING, blank=True, null=True)
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
 
     class Meta:
         managed = False
@@ -204,5 +205,4 @@ class UserProfile(models.Model):
     class Meta:
         managed = False
         db_table = 'user_profile'
-
 

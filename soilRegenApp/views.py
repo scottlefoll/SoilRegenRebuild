@@ -21,17 +21,11 @@ from django.views import View
 from django.views import generic
 from soilRegenApp.forms import AddFarmForm, DeleteFarmForm
 from .models import Amendment, AmendmentCategory, AmendmentElement, AmendmentType, Analysis, AnalysisItem
-from .models import Country, Element, Farm, Field, ReportItem, SoilReport, Source, SourceAmendment, User
+from .models import Country, Element, Farm, Field, ReportItem, SoilReport, Source, SourceAmendment, UserProfile
 from .services import ReportAnalysisService, RecommendationService, AmendmentRatioService
 
 def index(request):
     return render(request, 'index.html')
-
-
-class SignUpView(generic.CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy("login")
-    template_name = "registration/signup.html"
 
 
 class AmendmentController(View):
@@ -429,6 +423,12 @@ class ReportItemController(View):
         return redirect('report_item_list')
 
 
+class SignUpView(generic.CreateView):
+    form_class = UserCreationForm
+    success_url = reverse_lazy("login")
+    template_name = "registration/signup.html"
+
+
 class SoilReportController(View):
     def __init__(self):
         self.api_key = settings.API_KEY
@@ -513,19 +513,72 @@ class SourceController(View):
         }
         return render(request, 'source_detail.html', context)
 
+class UserProfileController(View):
+    def __init__(self):
+        self.api_key = settings.API_KEY
 
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=50, blank=True, null=True)
-    last_name = models.CharField(max_length=50, blank=True, null=True)
-    street_address = models.CharField(max_length=50, blank=True, null=True)
-    town = models.CharField(max_length=50, blank=True, null=True)
-    state = models.CharField(max_length=2, blank=True, null=True)
-    zip = models.CharField(max_length=5, blank=True, null=True)
-    phone = models.CharField(max_length=10, blank=True, null=True)
-    email = models.CharField(max_length=100, blank=True, null=True)
-    notes = models.CharField(max_length=255, blank=True, null=True)
+    @method_decorator(login_required(login_url='/accounts/login/'))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
-    class Meta:
-        managed = False
-        db_table = 'user_profile'
+    def profile_list(self, request):
+        print("UserProfile: GET ALL")
+        user_profiles = UserProfile.objects.all()
+        context = {'user_profiles': sorted(user_profiles, key=lambda profile: profile.user.username)}
+        return render(request, 'user_profile_list.html', context)
+
+    def profile_detail(self, request, user_id):
+        try:
+            user_profile = UserProfile.objects.get(user_id=user_id)
+        except UserProfile.DoesNotExist:
+            messages.error(request, f"User ID {user_id} does not exist")
+            return redirect('profile_list')
+        context = {
+            'user_profile': user_profile
+        }
+        return render(request, 'user_profile_detail.html', context)
+
+    # Create operation
+    @csrf_exempt  # Using this decorator to allow POST requests
+    def create_profile(self, request):
+        if request.method == 'POST':
+            user = request.POST.get('user')
+            street_address = request.POST.get('street_address')
+            town = request.POST.get('town')
+            state = request.POST.get('state')
+            zip = request.POST.get('zip')
+            phone = request.POST.get('phone')
+            notes = request.POST.get('notes')
+
+            new_profile = UserProfile.objects.create(
+                user=user,
+                street_address=street_address,
+                town=town,
+                state=state,
+                zip=zip,
+                phone=phone,
+                notes=notes,
+            )
+            new_profile.save()
+            return redirect('profile_list')
+
+    # Update operation
+    @csrf_exempt  # Using this decorator to allow POST requests
+    def update_profile(self, request, user_id):
+        user_profile = get_object_or_404(UserProfile, user_id=user_id)
+        if request.method == 'POST':
+            user_profile.street_address = request.POST.get('street_address')
+            user_profile.town = request.POST.get('town')
+            user_profile.state = request.POST.get('state')
+            user_profile.zip = request.POST.get('zip')
+            user_profile.phone = request.POST.get('phone')
+            user_profile.notes = request.POST.get('notes')
+
+            user_profile.save()
+            return redirect('profile_detail', user_id=user_profile.user.id)
+
+    # Delete operation
+    def delete_profile(self, request, user_id):
+        user_profile = get_object_or_404(UserProfile, user_id=user_id)
+        user_profile.delete()
+        return redirect('profile_list')
