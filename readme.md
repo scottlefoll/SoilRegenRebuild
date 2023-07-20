@@ -2,13 +2,13 @@
 
 # Overview
 
-SoilRegen Site is intended to demonstrate the use of Python and Django to create a scalable website using MVC and OOP architecture. It's a basic stock portfolio managemeent program that conects to the MarketStack API to download a year of historical records for each stock that is entered. The initial account with the MarketStack is for up to 10,000 API calls per month, so please feel free to experiment with it. When a stock is first added to the portfolio a one year history for the stock is retrieved from the API, including the following fields:
+SoilRegen Site is intended to demonstrate the use of Python and Django to create a scalable website using MVC and OOP architecture. It's a basic farm portfolio managemeent program that conects to the MarketStack API to download a year of historical records for each farm that is entered. The initial account with the MarketStack is for up to 10,000 API calls per month, so please feel free to experiment with it. When a farm is first added to the portfolio a one year history for the farm is retrieved from the API, including the following fields:
 
 date, open, high, low, close, volume, adj_high, adj_low, adj_close, adj_open, adj_volume, split_factor, dividend, symbol,exchange
 
-These records are then stored in an sql database where they can be retrieved quickly for analysis. Add as many stocks to the portfolio as desired, and each one will be retried upon adding. There is a significant delay when first adding a stock - this is not due to the the api or the data transfer, which happens within a second or two. The delay is caused by rendering the table in the stock detail screen with the hundreds of records that are returned. Pagination, and different forms of lazy loading have been explored, but as of this version the delay still exists when a stock is first added. After the initial add, retrieval and display of stock detail is nearly immediate.
+These records are then stored in an sql database where they can be retrieved quickly for analysis. Add as many farms to the portfolio as desired, and each one will be retried upon adding. There is a significant delay when first adding a farm - this is not due to the the api or the data transfer, which happens within a second or two. The delay is caused by rendering the table in the farm detail screen with the hundreds of records that are returned. Pagination, and different forms of lazy loading have been explored, but as of this version the delay still exists when a farm is first added. After the initial add, retrieval and display of farm detail is nearly immediate.
 
-An individual stock may be deleted or refreshed (have its price and other fields updated from the API) at any time either from the link on the stock detail view or from the portfolio view. When a stock is refreshed the updated stock information will then be stored in the SQL database.
+An individual farm may be deleted or refreshed (have its price and other fields updated from the API) at any time either from the link on the farm detail view or from the portfolio view. When a farm is refreshed the updated farm information will then be stored in the SQL database.
 
 The software is intended to show basic website syntax, structures and design using the python django framework.
 
@@ -104,7 +104,7 @@ To start the django server from within Python, open the project and then open a 
 
 This will start the server, and deliver the soilRegenApp website to localhost, where it is being delivered on port 8000. To open soilRegenApp in the browser, type the following command in the address bar: " http://127.0.0.1:8000/soilRegenApp/ "
 
-The project also has a fully working admin site that can be accessed in the browser, where users and stocks may be added or modified. To access the admin site, enter the following in a new browser window address bar:  " http://127.0.0.1:8000/admin/ "
+The project also has a fully working admin site that can be accessed in the browser, where users and farms may be added or modified. To access the admin site, enter the following in a new browser window address bar:  " http://127.0.0.1:8000/admin/ "
 
 To test the system the first time, try logging in to either the app site or the admin site using the following user credentials:
 

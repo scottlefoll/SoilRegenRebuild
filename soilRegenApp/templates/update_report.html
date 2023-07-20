@@ -3,9 +3,9 @@
 
 {% block content %}
 <div id="content-wrap">
-    <h2>{{ stock.name }} ({{ stock.symbol }})</h2> 
-    <a href="{% url 'update_stock' symbol=stock.symbol name=stock.name date=stock.date %}"><button>Update Stock</button></a>
-    <a href="{% url 'delete_stock' stock.symbol %}"><button>Delete Stock</button></a>
+    <h2>{{ farm.name }}</h2>
+    <a href="{% url 'update_farm' %}"><button>Update Report</button></a>
+    <a href="{% url 'delete_farm' %}"><button>Delete Report</button></a>
     <p>Last closing price: ${{ stock.close }} &emsp; Date: {{ stock.date }} &emsp; Volume: {{ stock.volume|intcomma }} &emsp; Exchange: {{ stock.exchange }}</p>
     <br>
     <div id="stock-detail-table-div">

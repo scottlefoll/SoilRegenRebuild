@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SoilRegan</title>
+    <title>SoilRegen</title>
     {% load static %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'soilRegenApp/css/styles.css' %}">
@@ -18,11 +18,11 @@
             {% if user.is_authenticated %}
                 <ul>
                     <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'stock_list' %}">Dashboard</a></li>
-                    <li><a href="{% url 'add_stock' %}">Farms</a></li>
-                    <li><a href="{% url 'add_stock' %}">Fields</a></li>
-                    <li><a href="{% url 'add_stock' %}">Reports</a></li>
-                    <li><a href="{% url 'add_stock' %}">Analysis</a></li>
+                    <li><a href="{% url 'home' %}">Dashboard</a></li>
+                    <li><a href="{% url 'home' %}">Farms</a></li>
+                    <li><a href="{% url 'home' %}">Fields</a></li>
+                    <li><a href="{% url 'home' %}">Reports</a></li>
+                    <li><a href="{% url 'home' %}">Analysis</a></li>
                     <li><a href="{% url 'logout' %}">Log Out</a></li>
 
                 </ul>

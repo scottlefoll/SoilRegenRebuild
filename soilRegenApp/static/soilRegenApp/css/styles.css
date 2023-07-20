@@ -32,14 +32,19 @@ nav a {
 
 /* CSS for the hero image */
 .hero-image {
-  /* background-image: url("https://www.croptracker.com/images/AdobeStock_92734782_4.10.44_PM-2.jpeg"); */
-  background-image: url("https://nofa.in/images/banner.jpg");
-  /* background-image: url("https://ajaybiotech.com/images/banner-blog-agriculture.jpg"); */
-  /* background-image: url("https://st4.depositphotos.com/2763558/37835/i/600/depositphotos_378351814-stock-photo-beautiful-young-asian-woman-man.jpg"); */
-  background-size: cover;
-  background-position: center;
-  height: 15rem;
-  width: 100%;
+    /* background-image: url("https://www.croptracker.com/images/AdobeStock_92734782_4.10.44_PM-2.jpeg"); */
+    background-image: url("https://nofa.in/images/banner.jpg");
+    /* background-image: url("https://www.organicresearchcentre.com/wp-content/uploads/2021/01/Homepage-banner-2021.jpg"); */
+    /* background-image: url("https://cdn.glitch.global/ab66e605-c32f-40f1-bbbf-16f7d18c81ce/header3.jpg?v=1689810019139"); */
+    /* background-image: url("https://cdn.glitch.global/ab66e605-c32f-40f1-bbbf-16f7d18c81ce/header.jpg?v=1689810028125"); */
+    /* background-image: url("https://ajaybiotech.com/images/banner-blog-agriculture.jpg"); */
+    /* background-image: url("https://st4.depositphotos.com/2763558/37835/i/600/depositphotos_378351814-stock-photo-beautiful-young-asian-woman-man.jpg"); */
+    background-size: cover;
+    background-position: center;
+    height: 12rem;
+
+    width: 100%;
+
 }
 
 /* CSS for the footer */
