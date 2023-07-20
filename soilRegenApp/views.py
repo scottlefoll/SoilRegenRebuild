@@ -24,6 +24,7 @@ from .models import Amendment, AmendmentCategory, AmendmentElement, AmendmentTyp
 from .models import Country, Element, Farm, Field, ReportItem, SoilReport, Source, SourceAmendment, UserProfile
 from .services import ReportAnalysisService, RecommendationService, AmendmentRatioService
 
+
 def index(request):
     return render(request, 'index.html')
 
@@ -512,6 +513,7 @@ class SourceController(View):
             'source': source
         }
         return render(request, 'source_detail.html', context)
+
 
 class UserProfileController(View):
     def __init__(self):

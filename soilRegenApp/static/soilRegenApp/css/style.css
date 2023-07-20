@@ -2,11 +2,6 @@
     box-sizing: border-box;
   }
   
-  body {
-    margin: 0;
-    font-family: Arial;
-  }
-  
   /* The grid: Four equal columns that float next to each other */
   .column {
     float: left;

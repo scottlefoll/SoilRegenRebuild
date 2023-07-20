@@ -18,10 +18,9 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Proxima+Nova" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-    <script src="soilRegenApp/jquery.keyframes.min.js"></script>
-    <script src="soilRegenApp/js/api.js"></script>
-    <script src="soilRegenApp/js/utilities.js"></script>
-    <script src="soilRegenApp/js/scripts.js" type="module"></script> 
+    <!-- <script src="{% static 'soilRegenApp/js/api.js' %}" type="module"></script> -->
+    <script src="{% static 'soilRegenApp/js/utilities.js' %}" type="module"></script>
+    <script src="{% static 'soilRegenApp/js/scripts.js' %}" type="module"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://kit.fontawesome.com/4414288e8e.js"></script>
@@ -49,24 +48,6 @@
       <header>
         <div class="navbar1">
           <nav>
-<!--             <ul class="navbar1-ul">
-              <li>
-                <div class="logo-box">
-                  <a href="index.html"
-                    ><img
-                      class="logo-image"
-                      src="https://cdn.glitch.global/b2291c7a-6033-4fc1-9118-983245131cc1/logo.jpg?v=1689820442708"
-                      alt="Farming hands"
-                  /></a>
-                </div>
-              </li> 
-              <li><a class="nav-choice" href="index.html" target="_self">Home</a></li>
-              <li><a class="nav-choice" href="index.html" target="_self">Dashboard</a></li>
-              <li><a class="nav-choice" href="index2.html" target="_self">About</a></li>
-              <li><a class="nav-choice" href="index3.html" target="_self">Contact</a></li>
-              <li><a class="nav-choice" href="index4.html" target="_self">Logout</a></li>
-            </ul> -->
-
             {% if user.is_authenticated %}
                 <ul class="navbar1-ul">
                     <li>
@@ -184,10 +165,10 @@
             </p>
 
             <iframe
-              src="circle_menu.html"
-              class="circle_menu_widget"
-              style="border: none"
-              title="Iframe Circle_Menu"
+                src="{% static 'soilRegenApp/html/circle_menu.html' %}"
+                class="circle_menu_widget"
+                style="border: none"
+                title="Iframe Circle_Menu"
             ></iframe>
 
             <h2 class="home-headline1a">Organic and Regenerative Agriculture</h2>
@@ -207,7 +188,7 @@
               <a href="https://broadforkfarm.com/do-you-know-the-principles-of-organic-farming/" target="_self">organic farming</a>.</p>
 
             <div class="home-paragraph1">
-                <h4>Regenerative Farming</h4>
+                <h3 class="home-headline2">Regenerative Farming</h3>
                 <p>The principles of regenerative and organic farming include:</p>
             </div>
             <ul>
@@ -239,10 +220,10 @@
                   ><i class="meta2">scottlefoll@gmail.com</i></a
                 >
                 <iframe
-                  src="social-widget.html"
-                  class="social-widget"
-                  style="border: none"
-                  title="Iframe Social"
+                    src="{% static 'soilRegenApp/html/social-widget.html' %}"
+                    class="social-widget"
+                    style="border: none"
+                    title="Iframe Social"
                 ></iframe>
               </div>
             </footer>
@@ -250,6 +231,5 @@
         </div>
       </main>
     </div>
-    <script src="js/style-transfer.js"></script>
   </body>
 </html>
