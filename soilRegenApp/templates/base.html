@@ -61,9 +61,9 @@
                       </div>
                     </li>
                     <li><a class="nav-choice" href="{% url 'home' %}">Home</a></li>
-                    <li><a class="nav-choice" href="{% url 'home' %}">Dashboard</a></li>
-                    <li><a class="nav-choice" href="{% url 'home' %}">About</a></li>
-                    <li><a class="nav-choice" href="{% url 'home' %}">Contact</a></li>
+                    <li><a class="nav-choice" href="{% url 'farm_list' %}">Dashboard</a></li>
+                    <li><a class="nav-choice" href="{% url 'about' %}">About</a></li>
+                    <li><a class="nav-choice" href="{% url 'contact' %}">Contact</a></li>
                     <li><a class="nav-choice" href="{% url 'logout' %}">Logout</a></li>
                 </ul>
             {% else %}
@@ -79,9 +79,9 @@
                       </div>
                     </li>
                     <li><a class="nav-choice" href="{% url 'home' %}">Home</a></li>
-                    <li><a class="nav-choice" href="{% url 'home' %}">About</a></li>
-                    <li><a class="nav-choice" href="{% url 'home' %}">Contact</a></li>
-                    <li><a class="nav-choice" href="{% url 'home' %}">Login</a></li>
+                    <li><a class="nav-choice" href="{% url 'login' %}">About</a></li>
+                    <li><a class="nav-choice" href="{% url 'login' %}">Contact</a></li>
+                    <li><a class="nav-choice" href="{% url 'login' %}">Login</a></li>
                 </ul>
             {% endif %}
 
@@ -203,15 +203,15 @@
             <p class="home-paragraph1">
               By prioritizing soil health, regenerative farming has the potential to create resilient farms that produce high-quality, nutrient-dense food, 
               while also playing a crucial role in biodiversity and maintaining a healthy environment.</p>
-            <br><br>
-
-
-            <div class="last-paragraph">
-                <br><br>
-            </div>
+            <br><br><br><br><br><br><br><br>
 
             {% block content %}
             {% endblock %}
+
+
+            <div class="last-paragraph">
+                <br><br><br><br>
+            </div>
 
             <footer class="social-footer">
               <div>
