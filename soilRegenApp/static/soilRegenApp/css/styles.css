@@ -1,6 +1,6 @@
 
 /* SCSS Gradient */
-$gradient-top: linear-gradient(
+/* $gradient-top: linear-gradient(
   0deg,
   #353535ff,
   #ffffffff,
@@ -70,7 +70,7 @@ $gradient-radial: radial-gradient(
   #d2d7dfff,
   #bdbbb0ff,
   #8a897cff
-);
+); */
 
 * {
     box-sizing: border-box;
@@ -81,10 +81,14 @@ body {
     /*   background-color: #8EAC50; */
     /*   background-color: #54B435; */
     /*   background-color: #82CD47; */
-        background-color: #379237;
+        /* background-color: #379237; */
+        background-color: blue;
         margin: 0;
         padding: 0;
-        font-family: Arial, sans-serif;
+        color: darkgreen;
+        font-weight: 700;
+        /* font-family: Arial, sans-serif; */
+        font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
 }
 
 figcaption {
@@ -136,7 +140,7 @@ h2 {
   font-variant: normal;
   font-weight: 900;
   line-height: 150%;
-  color: black;
+  /* color: black; */
   font-weight: 700;
 }
 
@@ -274,7 +278,7 @@ p {
 .circle-tips {
   position: fixed;
   right: calc(50% - 600px);
-  top: 65vh;
+  top: 68vh;
   width: 100px;
   height: 50px;
   z-index: 99;
@@ -294,6 +298,24 @@ p {
     width: 400px;
     height: 300px;
 }
+
+#content-wrap3{
+    position: relative;
+    width:fit-content;
+    margin: 0 auto;
+    margin-top: -18%;
+    /* top:0; */
+    /* float: top; */
+    color: darkgreen;
+    font-weight: 700;
+    padding: 3px;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2.5rem;
+    /* border: 2px solid blue;
+    border-collapse: collapse; */
+}
+
 .navbar1 {
   overflow: hidden;
   position: fixed;
@@ -345,7 +367,11 @@ p {
 /*   top: 20px; */
 }
 
-
+#main-title {
+    text-align: left;
+    font-size: 4rem;
+    padding-top: 20px;
+  }
 
 .home-paragraph1 {
   position: relative;
