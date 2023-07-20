@@ -268,7 +268,7 @@ p {
 .circle-tips {
   position: fixed;
   right: calc(50% - 600px);
-  top: 68vh;
+  top: 65vh;
   width: 100px;
   height: 50px;
   z-index: 99;
