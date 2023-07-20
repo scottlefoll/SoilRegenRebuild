@@ -81,8 +81,7 @@ body {
     /*   background-color: #8EAC50; */
     /*   background-color: #54B435; */
     /*   background-color: #82CD47; */
-        /* background-color: #379237; */
-        background-color: blue;
+        background-color: #379237;
         margin: 0;
         padding: 0;
         color: darkgreen;
@@ -93,7 +92,6 @@ body {
 
 figcaption {
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
-  color: black;
   font-size: 14px;
   font-weight: 500;
 }
@@ -128,7 +126,6 @@ h1 {
   left: 36%;
   height: 70px;
   font-weight: 700;
-  color: black;
   font-size: 90px;
   top: 50px;
 }
@@ -140,7 +137,6 @@ h2 {
   font-variant: normal;
   font-weight: 900;
   line-height: 150%;
-  /* color: black; */
   font-weight: 700;
 }
 
@@ -151,7 +147,6 @@ h3 {
   font-variant: normal;
   font-weight: 900;
   line-height: 150%;
-  color: black;
 }
 
 h4 {
@@ -161,7 +156,6 @@ h4 {
   font-variant: normal;
   font-weight: 900;
   line-height: 150%;
-  color: black;
 }
 
 img {
@@ -180,7 +174,6 @@ nav {
 /*   background-color: #d2d7df; */
 /*   background-color: #7C8DB4; */
   background-color: #F3EFE0;
-  color: black;
   font-weight: 700;
   font-size: 16px;
   padding-top: 10px;
@@ -210,7 +203,6 @@ nav ul li a {
 /*   background-color: #d2d7df; */
 /*   background-color: #7C8DB4; */
   background-color: #F3EFE0;
-  color: black;
   line-height: 3em;
   padding: 1em 1.5em;
   text-decoration: none;
@@ -228,7 +220,6 @@ nav ul li a.logo {
 /*   background-color: #d2d7df; */
 /*   background-color: #7C8DB4; */
   background-color: #F3EFE0;
-  color: black;
 }
 
 nav ul li a:hover {
@@ -242,7 +233,6 @@ p {
   font-style: normal;
   font-variant: normal;
   font-weight: 700;
-  color: black;
   font-size: 20px;
   font-weight: 700;
   line-height: 125%;
@@ -650,7 +640,6 @@ button {
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   font-style: italic;
   font-weight: 800;
-  color: black;
 }
 
 .moveDown {
