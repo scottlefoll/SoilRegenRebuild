@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SoilRegen</title>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'soilRegenApp/css/styles.css' %}">
+  </head>
+  <body>
+        <header>
+            <div class="hero-image"></div>
+        </header>
+        <nav>
+            <a href="{% url 'home' %}">
+                <h1 id='main-title'>SoilRegen</h1>
+            </a>
+
+            {% if user.is_authenticated %}
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'home' %}">Dashboard</a></li>
+                    <li><a href="{% url 'home' %}">Farms</a></li>
+                    <li><a href="{% url 'home' %}">Fields</a></li>
+                    <li><a href="{% url 'home' %}">Reports</a></li>
+                    <li><a href="{% url 'home' %}">Analysis</a></li>
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                </ul>
+            {% else %}
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                </ul>
+            {% endif %}
+        </nav>
+    <div id='page-container'>
+
+        {% block content %}
+        {% endblock %}
+        <footer>
+            <p>&copy; 2023 Scott LeFoll - scottlefoll@gmail.com</p>
+        </footer>
+    </div>
+  </body>
+</html>
