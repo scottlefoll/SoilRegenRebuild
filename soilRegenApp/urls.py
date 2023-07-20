@@ -9,7 +9,7 @@ urlpatterns = [
     path("signup/", SignUpView.as_view(), name="signup"),
 
     path('add_farm/', views.FarmController().create_farm, name='create_farm'),
-    path('farm_detail/<int:farm_id>/', views.FarmController().farm_detail, name='farm_detail'),
+    path('farm_detail/<int:farm_id>/', views.FarmController.as_view(), name='farm_detail'),
     path('delete_farm/<int:farm_id>/', views.FarmController().delete_farm, name='delete_farm'),
     path('update_farm/<int:farm_id>/', views.FarmController().update_farm, name='update_farm'),
 
