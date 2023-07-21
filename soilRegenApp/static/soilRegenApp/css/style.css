@@ -57,7 +57,7 @@
     font-size: 35px;
     cursor: pointer;
   }
-  
+
   /* The art images */
   .art-image {
     /* width: 400px; */
@@ -66,9 +66,8 @@
 	padding: 10px;
 	padding-bottom: 10px;
 	padding-top: 10px;
-   
   }
-  
+
   /* The art image container */
   .art-box {
 	position: absolute;

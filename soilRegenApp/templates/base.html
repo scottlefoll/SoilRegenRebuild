@@ -51,16 +51,6 @@
           <nav>
             {% if user.is_authenticated %}
                 <ul class="navbar1-ul">
-                    <li>
-                      <div class="logo-box">
-                        <a href="index.html"
-                          ><img
-                            class="logo-image"
-                            src="https://cdn.glitch.global/b2291c7a-6033-4fc1-9118-983245131cc1/logo.jpg?v=1689820442708"
-                            alt="Farming hands"
-                        /></a>
-                      </div>
-                    </li>
                     <li><a class="nav-choice" href="{% url 'home' %}">Home</a></li>
                     <li><a class="nav-choice" href="{% url 'farm_detail' farm_id=10 %}">Dashboard</a></li>
                     <li><a class="nav-choice" href="{% url 'home' %}">About</a></li>
@@ -69,25 +59,25 @@
                 </ul>
             {% else %}
                  <ul class="navbar1-ul">
-                    <li>
-                      <div class="logo-box">
-                        <a href="index.html"
-                          ><img
-                            class="logo-image"
-                            src="https://cdn.glitch.global/b2291c7a-6033-4fc1-9118-983245131cc1/logo-nb.png?v=1689893428177"
-                            alt="Farming hands"
-                        /></a>
-                      </div>
-                    </li>
                     <li><a class="nav-choice" href="{% url 'home' %}">Home</a></li>
                     <li><a class="nav-choice" href="{% url 'login' %}">About</a></li>
                     <li><a class="nav-choice" href="{% url 'login' %}">Contact</a></li>
                     <li><a class="nav-choice" href="{% url 'login' %}">Login</a></li>
                 </ul>
             {% endif %}
-
+            <div class="logo-box">
+                <a href="index.html"
+                  ><img
+                    class="logo-image"
+                    src="https://cdn.glitch.global/b2291c7a-6033-4fc1-9118-983245131cc1/logo-nb.png?v=1689893428177"
+                    alt="Farming hands"
+                /></a>
+            </div>
             <h1 id="main-title" class="home-headline1">SoilRegen</h1>
           </nav>
+        </div>
+        <div class="header-bar">
+            <!-- Add a color bar here -->
         </div>
       </header>
 
